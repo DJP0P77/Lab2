@@ -49,13 +49,23 @@ class BinarySearchTree{
       }//closing main if-else
    }
 
-
-
+   /**
+    *
+    * @param root PreOrder traversal method for the BST
+    */
    /*
    pre-order traversal
    */
    public void preOrderTraversal(Node root){
+      if (root == null)
+         return;
 
+      // traverse the root node
+      System.out.print(root.value + "->");
+      // traverse the left child
+      preOrderTraversal(root.left);
+      // traverse the right child
+      preOrderTraversal(root.right);
    }
 
    
