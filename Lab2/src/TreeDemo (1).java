@@ -149,15 +149,23 @@ class BinarySearchTree{
          return root.value;
       return getMin(root.left);
    }
-  
-  
-  
+
+
+
+   /**
+    *
+    * @param root root param retrieves the value of the root
+    * @return max value
+    */
    /*
    a method to find the node in the tree
    with a largest key
    */
    public int getMax(Node root){
+      if (root.right == null)
+         return root.value;
 
+      return getMax(root.right);
    }
    
    
