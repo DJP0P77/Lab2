@@ -92,11 +92,23 @@ class BinarySearchTree{
 
 
 
+   /**
+    *
+    * @param root PostOrder traversal method for the BST
+    */
    /*
    post-order traversal
    */
    public void postOrderTraversal(Node root){
+      if (root == null)
+         return;
 
+      // First recur on left subtree
+      postOrderTraversal(root.left);
+      // Then recur on right subtree
+      postOrderTraversal(root.right);
+      // Now deal with the node
+      System.out.print(root.value + " ");
    }
    
    
