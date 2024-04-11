@@ -68,13 +68,24 @@ class BinarySearchTree{
       preOrderTraversal(root.right);
    }
 
-   
-   
+
+   /**
+    *
+    * @param root InOrder traversal method for the BST
+    */
    /*
    in-order traversal
    */
    public void inOrderTraversal(Node root){
+      if (root == null)
+         return;
 
+      // traverse the left child
+      inOrderTraversal(root.left);
+      // traverse the root node
+      System.out.print(root.value + "->");
+      // traverse the right child
+      inOrderTraversal(root.right);
    }
    
    
