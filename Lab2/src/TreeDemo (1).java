@@ -110,15 +110,27 @@ class BinarySearchTree{
       // Now deal with the node
       System.out.print(root.value + " ");
    }
-   
-   
-   
+
+
+
+   /**
+    *
+    * @param root root parameter to get the value of the current root
+    * @param key key parameter to look for a specific value
+    * @return false
+    */
    /*
    a method to find the node in the tree
    with a specific value
    */
    public boolean find(Node root, int key){
-
+      if (root==null || root.value==key)
+         return false;
+      // val is greater than root's key
+      if (root.value > key)
+         return find(root.left, key);
+      // val is less than root's key
+      return find(root.right, key);
    }
    
    
